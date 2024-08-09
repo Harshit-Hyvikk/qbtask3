@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
@@ -8,3 +10,5 @@ Route::get('/', function () {
 });
 
 Route::resource('/product', ProductController::class);
+Route::resource('/users', UserController::class);
+Route::resource('/contact', ContactController::class);

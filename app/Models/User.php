@@ -16,11 +16,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
+
+    protected $guarded = [];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -40,8 +43,15 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
+            // 'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function phone(){
+        return $this->hasOne(Contact::class);
+        // return $this->hasOne(Contact::class)->latestOfMany();
+        // return $this->hasmany(Contact::class);
+        // return $this->belongsToMany(Contact::class);//many to many
     }
 }

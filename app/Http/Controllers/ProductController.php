@@ -34,10 +34,13 @@ class ProductController extends Controller
         // $products = DB::table("products")->avg('price');
         // $products = DB::table("products")->get('price as p');
         // $products = DB::table("products")->distinct()->get('name');
-        $products = DB::table("products")->select('name');
-        $user=$products->addSelect('description')->get();
-        return $user;
+
+        // $products = DB::table("products")->select('name');
+        // $user = $products->addSelect('description')->get();
+        // return $user;
         // return view('allproducts',compact('products'));
+
+        
     }
 
     /**

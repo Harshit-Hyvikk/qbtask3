@@ -24,6 +24,11 @@
                 <div class="col-8">
                     <a href="{{ route('product.index') }}" class=" btn btn-secondary btn-sm">All Products</a>
                     <a href="{{ route('product.store') }}" class=" btn btn-warning btn-sm">Add New Product</a>
+                    <form action="{{ route('contact.store') }}" method="post" class="mt-3">
+                        @csrf
+                    <button type="submit" class=" btn btn-primary btn-sm">Add contact details</button>
+                </form>
+
                     {{-- <a href=""></a>
                     <a href=""></a> --}}
                 </div>

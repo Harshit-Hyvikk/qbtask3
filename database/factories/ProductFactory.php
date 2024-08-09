@@ -18,14 +18,14 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
-            'slug'=> $this->faker->unique()->slug,
-            'category'=> $this->faker->randomElement(['Fashion','Cloths','Books','Electronics','Kitchen']),
-            'description'=> $this->faker->text,
-            'email' => $this->faker->unique()->safeEmail,
+            'name' => $this->faker->name(),
+            'slug' => $this->faker->unique()->slug(),
+            'category' => $this->faker->randomElement(['Fashion', 'Clothes', 'Books', 'Electronics', 'Kitchen']),
+            'description' => $this->faker->text(),
+            'email' => $this->faker->unique()->safeEmail(),
             'password' => Hash::make('password'),
-            'price'=> $this->faker->randomFloat(2,100,1000),
-            'city'=> $this->faker->city(),
+            'price' => $this->faker->randomFloat(2, 100, 1000),
+            'city' => $this->faker->city(),
         ];
     }
 }
